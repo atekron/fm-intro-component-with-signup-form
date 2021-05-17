@@ -1,0 +1,138 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-red: hsl(0, 100%, 74%);
+  --primary-green: hsl(154, 59%, 51%);
+  --accent-blue: hsl(248, 32%, 49%);
+  --neutral-dark-blue: hsl(249, 10%, 26%);
+  --neutral-grayish-blue: hsl(246, 25%, 77%);
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--primary-red);
+  background-image: url("/images/bg-intro-mobile.png");
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.container {
+  margin: 4rem auto;
+  text-align: center;
+  max-width: 375px;
+  padding: 1rem;
+}
+
+header {
+  color: white;
+  margin: 3rem auto;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+header p {
+  margin: 1.5rem 0.5rem;
+  font-weight: 500;
+  opacity: 0.8;
+}
+
+.banner {
+  color: white;
+  background-color: var(--accent-blue);
+  border-radius: 0.7rem;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+  padding: 1rem 4rem;
+  margin: 2rem 1rem;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+form {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.15);
+}
+
+form input {
+  border: 0.1rem solid var(--neutral-grayish-blue);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+form input::placeholder {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.error-message {
+  display: none;
+  position: relative;
+  color: var(--primary-red);
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.error-message::after {
+  content: url("/images/icon-error.svg");
+  position: absolute;
+  bottom: 2.5rem;
+  right: 1rem;
+}
+
+#submit-btn {
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 0.1rem solid hsl(154, 61%, 39%);
+  border-bottom: 0.3rem solid hsl(154, 61%, 39%);
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary-green);
+  color: white;
+  cursor: pointer;
+}
+
+.agreements {
+  color: var(--neutral-grayish-blue);
+  font-size: 0.8rem;
+}
+
+.agreements a {
+  text-decoration: none;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+@media screen and (min-width: 420px) {
+  body {
+    background-image: url("/images/bg-intro-desktop.png");
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    background-size: auto 100%;
+  }
+}
