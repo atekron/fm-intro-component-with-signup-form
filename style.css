@@ -22,8 +22,8 @@ body {
   font-size: 16px;
   background-color: var(--primary-red);
   background-image: url("/images/bg-intro-mobile.png");
-  background-repeat: repeat-y;
-  background-size: 100% auto;
+  /* background-repeat: repeat-y; */
+  background-size: 100% 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,8 @@ body {
 .container {
   margin: 4rem auto;
   text-align: center;
-  max-width: 375px;
+  min-width: 375px;
+  max-width: 600px;
   padding: 1rem;
 }
 
@@ -66,7 +67,7 @@ header p {
 
 form {
   margin: 1rem;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   background-color: white;
   border-radius: 0.5rem;
   box-shadow: 0 0.5rem 0 rgba(0, 0, 0, 0.15);
@@ -74,10 +75,11 @@ form {
 
 form input {
   border: 0.1rem solid var(--neutral-grayish-blue);
+  color: var(--neutral-grayish-blue);
   border-radius: 0.5rem;
   padding: 1rem;
   width: 100%;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
 }
 
 form input::placeholder {
@@ -85,8 +87,21 @@ form input::placeholder {
   font-size: 1rem;
 }
 
-.error-message {
+form input::placeholder {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+form input:focus {
+  color: black;
+}
+
+.error-hidden {
   display: none;
+}
+
+.error-message {
+  display: block;
   position: relative;
   color: var(--primary-red);
   text-align: right;
@@ -98,28 +113,37 @@ form input::placeholder {
 .error-message::after {
   content: url("/images/icon-error.svg");
   position: absolute;
-  bottom: 2.5rem;
+  bottom: 2.2rem;
   right: 1rem;
 }
 
 #submit-btn {
   width: 100%;
-  margin: 1rem auto;
+  margin: 0.5rem auto;
   padding: 1rem;
   border-radius: 0.5rem;
   border: 0.1rem solid hsl(154, 61%, 39%);
   border-bottom: 0.3rem solid hsl(154, 61%, 39%);
   text-transform: uppercase;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 500;
   background-color: var(--primary-green);
   color: white;
   cursor: pointer;
 }
 
+#submit-btn:hover {
+  opacity: 0.5;
+}
+#submit-btn:active {
+  width: 98%;
+  border-bottom: 0.1rem solid hsl(154, 61%, 39%);
+  margin: 0.6rem auto;
+}
+
 .agreements {
   color: var(--neutral-grayish-blue);
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .agreements a {
@@ -134,5 +158,29 @@ form input::placeholder {
     background-repeat: no-repeat;
     background-position-x: 50%;
     background-size: auto 100%;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .container {
+    margin: auto;
+    display: flex;
+    max-width: 70rem;
+  }
+
+  header {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  header h1 {
+    font-size: 3rem;
+  }
+
+  form {
+    padding: 2rem;
+    min-width: 30rem;
   }
 }

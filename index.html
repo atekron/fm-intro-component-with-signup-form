@@ -46,31 +46,33 @@
             placeholder="First Name"
             aria-label="First Name"
           />
-          <p class="error-message">First Name cannot be empty</p>
+          <p class="error-first-name error-hidden">
+            First Name cannot be empty
+          </p>
           <input
             id="last-name"
             type="text"
             placeholder="Last Name"
             aria-label="Last Name"
           />
-          <p class="error-message">Last Name cannot be empty</p>
+          <p class="error-last-name error-hidden">Last Name cannot be empty</p>
           <input
             id="user-email"
             type="email"
             placeholder="Email Address"
             aria-label="Email Address"
           />
-          <p class="error-message">Looks like this is not an email</p>
+          <p class="error-email error-hidden">
+            Looks like this is not an email
+          </p>
           <input
             id="user-password"
             type="password"
             placeholder="Password"
             aria-label="Password"
           />
-          <p class="error-message">Password cannot be empty</p>
-          <button id="submit-btn" type="submit" onclick="submitForm()">
-            Claim your free trial
-          </button>
+          <p class="error-password error-hidden">Password cannot be empty</p>
+          <button id="submit-btn" type="submit">Claim your free trial</button>
           <p class="agreements">
             By clicking the button, you are agreeing to our
             <a href="#">Terms and Services</a>
